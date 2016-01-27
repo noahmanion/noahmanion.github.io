@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2015-12-12T10:30:51-06:00</updated>
+<updated>2016-01-26T21:07:27-06:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Noah Manion</name>
@@ -12,8 +12,6 @@
   
 </author>
 
-
-  
 
 <entry>
   <title type="html"><![CDATA[Test Post]]></title>
@@ -35,31 +33,6 @@
 </entry>
 
 
-  
-
-<entry>
-  <title type="html"><![CDATA[First Post]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/first-post/" />
-  <id>http://localhost:4000/first-post</id>
-  <updated>2015-11-10 22:37:57 -0600T00:00:00-00:00</updated>
-  <published>2015-11-10T22:37:57-06:00</published>
-  
-  <author>
-    <name>Noah Manion</name>
-    <uri>http://localhost:4000</uri>
-    
-  </author>
-  <content type="html">
-    &lt;h3 id=&quot;hello-this-is-my-first-post&quot;&gt;Hello, This is my first post&lt;/h3&gt;
-&lt;p&gt;It’s basically just a placeholder.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/first-post/&quot;&gt;First Post&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
-  </content>
-</entry>
-
-
-  
-
 <entry>
   <title type="html"><![CDATA[Adwords Scripts]]></title>
   <link rel="alternate" type="text/html" href="http://localhost:4000/adwords-scripting/" />
@@ -75,7 +48,7 @@
   <content type="html">
     &lt;h1 id=&quot;advertise-products-online-and-have-problems-when-things-are-out-of-stock&quot;&gt;Advertise products online and have problems when things are out of stock?&lt;/h1&gt;
 
-&lt;p&gt;I had a problem where I was running product ads on a variety of platforms, but things would go out of stock and my application wasn’t able to automatically turn ads off. I figured out a way to use Adwords Scripts &amp;amp; the Twilio API to notify me of these changes! &lt;/p&gt;
+&lt;p&gt;I had a problem where I was running product ads on a variety of platforms, but things would go out of stock and my application wasn’t able to automatically turn ads off. I figured out a way to use Adwords Scripts &amp;amp; the Twilio API to notify me of these changes!&lt;/p&gt;
 
 &lt;h2 id=&quot;the-problem&quot;&gt;The problem:&lt;/h2&gt;
 &lt;p&gt;I was working on a project where I was advertising products that had limited quantities that I wasn’t aware of, and multiple referral sources bringing traffic to the product page. In addition, the action I was tracking to use as a conersion wasn’t necessarily a purchase, pageview or outbound click. Couple that with a conversion tracking system that wans’t always accurate and I had a real issue on my hands.
@@ -186,6 +159,27 @@ var client = new Twilio(sid,auth);&lt;/p&gt;
 ```&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://localhost:4000/adwords-scripting/&quot;&gt;Adwords Scripts&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[First Post]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/first-post/" />
+  <id>http://localhost:4000/first-post</id>
+  <updated>2015-11-10 22:37:57 -0600T00:00:00-00:00</updated>
+  <published>2015-11-10T22:37:57-06:00</published>
+  
+  <author>
+    <name>Noah Manion</name>
+    <uri>http://localhost:4000</uri>
+    
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;hello-this-is-my-first-post&quot;&gt;Hello, This is my first post&lt;/h3&gt;
+&lt;p&gt;It’s basically just a placeholder.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/first-post/&quot;&gt;First Post&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
   </content>
 </entry>
 
