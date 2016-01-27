@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Noah Manion: These are my thoughts.</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2015-12-12T10:30:51-06:00</updated>
+<id>http://localhost:4000/</id>
+<author>
+  <name>Noah Manion</name>
+  <uri>http://localhost:4000/</uri>
+  
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Test Post]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/is-this-on/" />
+  <id>http://localhost:4000/is-this-on</id>
+  <updated>2015-12-04 08:54:57 -0600T00:00:00-00:00</updated>
+  <published>2015-11-10T22:37:57-06:00</published>
+  
+  <author>
+    <name>Noah Manion</name>
+    <uri>http://localhost:4000</uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Does this work?&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/is-this-on/&quot;&gt;Test Post&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[First Post]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/first-post/" />
+  <id>http://localhost:4000/first-post</id>
+  <updated>2015-11-10 22:37:57 -0600T00:00:00-00:00</updated>
+  <published>2015-11-10T22:37:57-06:00</published>
+  
+  <author>
+    <name>Noah Manion</name>
+    <uri>http://localhost:4000</uri>
+    
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;hello-this-is-my-first-post&quot;&gt;Hello, This is my first post&lt;/h3&gt;
+&lt;p&gt;It’s basically just a placeholder.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/first-post/&quot;&gt;First Post&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Adwords Scripts]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/adwords-scripting/" />
+  <id>http://localhost:4000/adwords-scripting</id>
+  <updated>2015-12-04 08:54:57 -0600T00:00:00-00:00</updated>
+  <published>2015-11-10T22:37:57-06:00</published>
+  
+  <author>
+    <name>Noah Manion</name>
+    <uri>http://localhost:4000</uri>
+    
+  </author>
+  <content type="html">
+    &lt;h1 id=&quot;advertise-products-online-and-have-problems-when-things-are-out-of-stock&quot;&gt;Advertise products online and have problems when things are out of stock?&lt;/h1&gt;
+
+&lt;p&gt;I had a problem where I was running product ads on a variety of platforms, but things would go out of stock and my application wasn’t able to automatically turn ads off. I figured out a way to use Adwords Scripts &amp;amp; the Twilio API to notify me of these changes! &lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The problem:&lt;/h2&gt;
+&lt;p&gt;I was working on a project where I was advertising products that had limited quantities that I wasn’t aware of, and multiple referral sources bringing traffic to the product page. In addition, the action I was tracking to use as a conersion wasn’t necessarily a purchase, pageview or outbound click. Couple that with a conversion tracking system that wans’t always accurate and I had a real issue on my hands.
+For the first few months of the project, I just sent traffic to the product lisitng page and waited until someone watching the page notified me that the product was no longer available. This worked out for awhile until there was a miscommunication and I ended up paying several thousand dollars to send traffic to an inactive page. 
+I had been looking into AdWords Scripts for awhile to automate some AdWords work I was doing and I came across &lt;a href=&quot;http://www.freeadwordsscripts.com&quot;&gt;FreeAdwordsScripts.com&lt;/a&gt; and began to explore how some of the example scripts there could help. I learned how to connect a script to a Google Sheet and extract infromation, and I found the most helpful example &lt;a href=&quot;http://www.freeadwordsscripts.com/2014/01/make-calls-and-send-text-messages-to.html&quot;&gt;how to connect the Twilio API&lt;/a&gt; to your Scripts account, thus allowing you automate text messages reporiting anomalies with your account (or in my case, pages I was tracking).
+&lt;a href=&quot;https://docs.google.com/spreadsheets/d/1wMtmhR7um578l4HWVf-PSa0e1KLoR-5u8khbxj1CVLg/edit?usp=sharing&quot;&gt;Here’s a spreadsheet to copy&lt;/a&gt;. The sheet uses the named range in the sheet to run. If you only need to track one URL&lt;/p&gt;
+
+&lt;h2 id=&quot;heres-the-full-code&quot;&gt;Here’s the full code:&lt;/h2&gt;
+&lt;p&gt;```javascript
+/&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;*
+&lt;em&gt;Out of Stock Checker Script v2.3
+*
+*
+*2.3 changes: Added Twilio capibility to send texts when there is a problem with a URL
+**&lt;/em&gt;&lt;/strong&gt;*/&lt;/p&gt;
+
+&lt;p&gt;//variables needed for teh script
+var spreadsheet_url = “SPREADSHEET_URL_HERE”;&lt;/p&gt;
+
+&lt;p&gt;var TEXT_CHANGED = “Whatever you’re looking to track”;
+var subject = “URL CHANGE!”;
+var recipient = “you@example.com”;
+var results = “There was a change at: “;
+var sid = ‘GET_YOUR_OWN’;
+var auth = ‘FROM_TWILIO’;
+var client = new Twilio(sid,auth);&lt;/p&gt;
+
+&lt;p&gt;function main() {
+	//put a spreadsheet range into an array
+	var iter = buildSelector();
+	for (var i = 0; i &amp;lt; iter.length; i++) {
+		//iterate through the range to create urls to fetch
+		var deal = iter[i];
+		//get the source of an item in the array
+		htmlCode = UrlFetchApp.fetch(deal).getContentText();
+		//check the source for text
+		if (htmlCode.indexOf(TEXT_CHANGED) &amp;gt;= 0) {
+			//send an email if changed
+			MailApp.sendEmail(recipient, subject, results+entity);
+			//send a text if changed
+			client.sendMessage(‘+14124179263’,’+13123136668’,”This Deal Has Expired: “+deal)
+        	//log the expired urls. mostly here as a debugger
+        	Logger.log(“this is expired: “+deal);
+		} else {
+			//log the good urls. mostly here as a debugger
+			Logger.log(deal+” is good”)
+		}
+	} 
+}&lt;/p&gt;
+
+&lt;p&gt;function buildSelector () {
+	var spreadsheet = SpreadsheetApp.openByUrl(spreadsheet_url);
+	var sheet = spreadsheet.getRangeByName(‘URLS_TO_TRACK’);
+	var selector = new Array();
+	var sheet_values = sheet.getValues();
+	for (var i = 0; i &amp;lt; sheet_values.length; i++) {
+		//if(sheet_values[i][0] == “”){
+			//continue
+			//var selector = sheet_values;
+		//}
+			var selector = sheet_values
+	}
+	return selector;
+	//Logger.log(selector);
+}&lt;/p&gt;
+
+&lt;p&gt;function Twilio(accountSid, authToken) {
+  this.ACCOUNT_SID = accountSid;
+  this.AUTH_TOKEN = authToken;&lt;/p&gt;
+
+&lt;p&gt;this.MESSAGES_ENDPOINT = ‘https://api.twilio.com/2010-04-01/Accounts/’+this.ACCOUNT_SID+’/Messages.json’;
+  this.CALLS_ENDPOINT = ‘https://api.twilio.com/2010-04-01/Accounts/’+this.ACCOUNT_SID+’/Calls.json’;&lt;/p&gt;
+
+&lt;p&gt;this.sendMessage = function(to,from,body) {
+    var httpOptions = {
+      method : ‘POST’,
+      payload : {
+        To: to,
+        From: from,
+        Body: body
+      },
+      headers : getBasicAuth(this)
+    };
+    var resp = UrlFetchApp.fetch(this.MESSAGES_ENDPOINT, httpOptions).getContentText();
+    return JSON.parse(resp)[‘sid’];
+  }&lt;/p&gt;
+
+&lt;p&gt;this.makeCall = function(to,from,whatToSay) {
+    var url = ‘http://proj.rjsavage.com/savageautomation/twilio_script/dynamicSay.php?alert=’+encodeURIComponent(whatToSay);
+    var httpOptions = {
+      method : ‘POST’,
+      payload : {
+        To: to,
+        From: from,
+        Url: url
+      },
+      headers : getBasicAuth(this)
+    };
+    var resp = UrlFetchApp.fetch(this.CALLS_ENDPOINT, httpOptions).getContentText();
+    return JSON.parse(resp)[‘sid’];&lt;/p&gt;
+
+&lt;p&gt;function getBasicAuth(context) {
+    return {
+      ‘Authorization’: ‘Basic ‘ + Utilities.base64Encode(context.ACCOUNT_SID+’:’+context.AUTH_TOKEN)
+    };
+  }
+}
+```&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/adwords-scripting/&quot;&gt;Adwords Scripts&lt;/a&gt; was originally published by Noah Manion at &lt;a href=&quot;http://localhost:4000&quot;&gt;Noah Manion: These are my thoughts.&lt;/a&gt; on November 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>
