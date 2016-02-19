@@ -1,7 +1,7 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "I am Noah Manion, a growth marketer by day, who is also interested in hacking, hockey & pickles"
+tags: [Noah, home, growth, hockey, hacking]
 image:
   feature: redhots.jpg
   credit: IG

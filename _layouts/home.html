@@ -28,35 +28,7 @@
   </div><!-- /.image-wrap -->
 {% endif %}
     <!-- Ouibounce Modal -->
-    <div id="ouibounce-modal">
-      <div class="underlay"></div>
-      <div class="modal">
-        <div class="modal-title">
-          <h3>This is a modal</h3>
-        </div>
-
-        <div class="modal-body">
-          <h2>Don't leave yet!</h2>
-          <br>
-          <p>No, you can leave if you want, it's okay. I just wanted to set <a href="https://github.com/carlsednaoui/ouibounce">Ouibounce</a> up to see how it works.</p>
-          <br>
-          <p> Fill out the form. Or don't. It doesn't work. 
-          <br>
-          <p>Close this modal by clicking "No Thanks" below or clicking anywhere outside of the modal.</p>
-
-          <form>
-            <input type="text" placeholder="you@email.com">
-            <input type="submit" value="learn more &raquo;">
-            <p class="form-notice">*this form doesn't work</p>
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <p>I want to stay here, so close the modal.</p>
-        </div>
-      </div>
-    </div>
-
+    {% include _modal.html %}
 <div id="main" role="main">
   <div class="article-author-side">
     {% include _author-bio.html %}
@@ -88,14 +60,45 @@
 <!-- Used to fire the modal -->
     <script>
 
+<script>
+      function detectmob() { 
+         if( navigator.userAgent.match(/Android/i)
+         || navigator.userAgent.match(/webOS/i)
+         || navigator.userAgent.match(/iPhone/i)
+         || navigator.userAgent.match(/iPad/i)
+         || navigator.userAgent.match(/iPod/i)
+         || navigator.userAgent.match(/BlackBerry/i)
+         || navigator.userAgent.match(/Windows Phone/i)
+       ){ return true
+         } else {
+          return false
+         };
+       }
+       if ( detectmob() ) {
+        setTimeout(function() {
+          $('#ouibounce-modal').show();
+        },2000);
+       $('body').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('#ouibounce-modal .modal-footer').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('#ouibounce-modal .modal').on('click', function(e) {
+        e.stopPropagation();
+      });
+       } else {
+         console.log("You're on Desktop!");
       // if you want to use the 'fire' or 'disable' fn,
       // you need to save OuiBounce to an object
+      document.getElementById('ouibounce-modal').style.position = "fixed";
       var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
         aggressive: true,
         timer: 0,
         callback: function() { console.log('ouibounce fired!'); }
       });
-
       $('body').on('click', function() {
         $('#ouibounce-modal').hide();
       });
@@ -107,6 +110,12 @@
       $('#ouibounce-modal .modal').on('click', function(e) {
         e.stopPropagation();
       });
+      function goHome() {
+        location.href = 'https://sagegreenlife.com';
+      }
+         //$('#ouibounce-modal #mc_embed_singup .button').on('click', setTimeout(goHome(), 5000));
+    }
+    </script>
     </script>
 </body>
 </html>
