@@ -48,20 +48,20 @@ function main() {
 	var iter = buildSelector();
 	for (var i = 0; i < iter.length; i++) {
 		//iterate through the range to create urls to fetch
-		var deal = iter[i];
+		var page = iter[i];
 		//get the source of an item in the array
-		htmlCode = UrlFetchApp.fetch(deal).getContentText();
+		htmlCode = UrlFetchApp.fetch(page).getContentText();
 		//check the source for text
 		if (htmlCode.indexOf(TEXT_CHANGED) >= 0) {
 			//send an email if changed
 			MailApp.sendEmail(recipient, subject, results+entity);
-			//send a text if changed
-			client.sendMessage('+14124179263','+13123136668',"This Deal Has Expired: "+deal)
+			//send a text if changed, the first number is where the text should go, the second is where it should come from
+			client.sendMessage('+1234567890','+9876543210',"This Page Has Changed: "+page)
         	//log the expired urls. mostly here as a debugger
-        	Logger.log("this is expired: "+deal);
+        	Logger.log("this is page doesn't exist like it should: "+page);
 		} else {
 			//log the good urls. mostly here as a debugger
-			Logger.log(deal+" is good")
+			Logger.log(page+" is good")
 		}
 	} 
 }
