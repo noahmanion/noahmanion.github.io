@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My Journey (Career Change)
-modified: 2015-12-04T08:54:57-06:00
+modified: 2016-02-19T08:54:57-06:00
 categories: 
 excerpt: "I've had a long weird journey"
 tags: [posts, Noah, where i've been]
