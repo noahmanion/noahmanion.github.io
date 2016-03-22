@@ -40,9 +40,16 @@ return function ouibounce(el, config) {
 
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
+    if detectMob(){
+      setTimeout(function(){
+        _html.addEventListener('onload', handleLoad);
+      }, 3000);
+    } else {
+      console.log("Dektop")
     _html.addEventListener('mouseleave', handleMouseleave);
     _html.addEventListener('mouseenter', handleMouseenter);
     _html.addEventListener('keydown', handleKeydown);
+    }
   }
 
   function handleMouseleave(e) {
@@ -56,6 +63,11 @@ return function ouibounce(el, config) {
       clearTimeout(_delayTimer);
       _delayTimer = null;
     }
+  }
+  function handleLoad(e) {
+    if ( $(document).ready() || checkCookieValue(cookieName, 'true' && !aggressive)) return;
+
+    _delayTimer = setTimeout(_fireAndCallback, delay);
   }
 
   var disableKeydown = false;
