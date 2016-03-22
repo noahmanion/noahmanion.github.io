@@ -59,37 +59,6 @@
 
 <!-- Used to fire the modal -->
     <script>
-
-<script>
-      function detectmob() { 
-         if( navigator.userAgent.match(/Android/i)
-         || navigator.userAgent.match(/webOS/i)
-         || navigator.userAgent.match(/iPhone/i)
-         || navigator.userAgent.match(/iPad/i)
-         || navigator.userAgent.match(/iPod/i)
-         || navigator.userAgent.match(/BlackBerry/i)
-         || navigator.userAgent.match(/Windows Phone/i)
-       ){ return true
-         } else {
-          return false
-         };
-       }
-       if ( detectmob() ) {
-        setTimeout(function() {
-          $('#ouibounce-modal').show();
-        },2000);
-       $('body').on('click', function() {
-        $('#ouibounce-modal').hide();
-      });
-
-      $('#ouibounce-modal .modal-footer').on('click', function() {
-        $('#ouibounce-modal').hide();
-      });
-
-      $('#ouibounce-modal .modal').on('click', function(e) {
-        e.stopPropagation();
-      });
-       } else {
          console.log("You're on Desktop!");
       // if you want to use the 'fire' or 'disable' fn,
       // you need to save OuiBounce to an object
@@ -114,8 +83,7 @@
         location.href = 'https://sagegreenlife.com';
       }
          //$('#ouibounce-modal #mc_embed_singup .button').on('click', setTimeout(goHome(), 5000));
-    }
-    </script>
+
     </script>
 </body>
 </html>

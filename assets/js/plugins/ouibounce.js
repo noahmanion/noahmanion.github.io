@@ -40,7 +40,7 @@ return function ouibounce(el, config) {
 
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
-    if detectMob(){
+    if detectMob() {
       setTimeout(function(){
         _html.addEventListener('onload', handleLoad);
       }, 3000);
