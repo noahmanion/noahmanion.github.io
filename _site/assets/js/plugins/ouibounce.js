@@ -45,6 +45,14 @@ return function ouibounce(el, config) {
     _html.addEventListener('keydown', handleKeydown);
   }
 
+  function detectmob() {
+   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+     return true;
+   } else {
+     return false;
+   }
+  }
+
   function handleMouseleave(e) {
     if (e.clientY > sensitivity || (checkCookieValue(cookieName, 'true') && !aggressive)) return;
 
@@ -56,6 +64,11 @@ return function ouibounce(el, config) {
       clearTimeout(_delayTimer);
       _delayTimer = null;
     }
+  }
+  function handleLoad(e) {
+    if ( $(document).ready() || checkCookieValue(cookieName, 'true' && !aggressive)) return;
+
+    _delayTimer = setTimeout(_fireAndCallback, delay);
   }
 
   var disableKeydown = false;
@@ -126,6 +139,7 @@ return function ouibounce(el, config) {
     _html.removeEventListener('mouseleave', handleMouseleave);
     _html.removeEventListener('mouseenter', handleMouseenter);
     _html.removeEventListener('keydown', handleKeydown);
+    _html.removeEventListener('onload', handleLoad);
   }
 
   return {

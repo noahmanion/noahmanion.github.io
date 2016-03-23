@@ -10,6 +10,7 @@
 <meta name="keywords" content="posts, Noah">
 
 
+
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Adwords Scripts">
 <meta name="twitter:description" content="Use AdWords Scripts & the Twilio API to keep track of when things go out of stock">
@@ -90,15 +91,23 @@
 		    <ul>
 		        
 				    
+				        
+				    
 				    <li><a href="http://noahmanion.github.io/about/" >About</a></li>
 				
+				    
+				        
 				    
 				    <li><a href="http://noahmanion.github.io/posts/" >Posts</a></li>
 				
 				    
+				        
+				    
 				    <li><a href="http://noahmanion.github.io/pages/" >Pages</a></li>
 				
 				    
+				        
+				        
 				    <li><a href="http://noahmanion.github.io" target="_blank">Noah Manion</a></li>
 				
 		    </ul>
@@ -122,6 +131,7 @@
 <div id="main" role="main">
   <div class="article-author-side">
     
+
 
 <div itemscope itemtype="http://schema.org/Person">
 
@@ -163,7 +173,7 @@
     <div class="article-wrap">
       <h1 id="advertise-products-online-and-have-problems-when-things-are-out-of-stock">Advertise products online and have problems when things are out of stock?</h1>
 
-<p>I had a problem where I was running product ads on a variety of platforms, but things would go out of stock and my application wasn’t able to automatically turn ads off. I figured out a way to use Adwords Scripts &amp; the Twilio API to notify me of these changes!</p>
+<p>I had a problem where I was running product ads on a variety of platforms, but things would go out of stock and my application wasn’t able to automatically turn ads off. I figured out a way to use Adwords Scripts &amp; the Twilio API to notify me of these changes! </p>
 
 <h2 id="the-problem">The problem:</h2>
 <p>I was working on a project where I was advertising products that had limited quantities that I wasn’t aware of, and multiple referral sources bringing traffic to the product page. In addition, the action I was tracking to use as a conersion wasn’t necessarily a purchase, pageview or outbound click. Couple that with a conversion tracking system that wans’t always accurate and I had a real issue on my hands.
@@ -196,20 +206,20 @@ var client = new Twilio(sid,auth);</p>
 	var iter = buildSelector();
 	for (var i = 0; i &lt; iter.length; i++) {
 		//iterate through the range to create urls to fetch
-		var deal = iter[i];
+		var page = iter[i];
 		//get the source of an item in the array
-		htmlCode = UrlFetchApp.fetch(deal).getContentText();
+		htmlCode = UrlFetchApp.fetch(page).getContentText();
 		//check the source for text
 		if (htmlCode.indexOf(TEXT_CHANGED) &gt;= 0) {
 			//send an email if changed
 			MailApp.sendEmail(recipient, subject, results+entity);
-			//send a text if changed
-			client.sendMessage(‘+14124179263’,’+13123136668’,”This Deal Has Expired: “+deal)
+			//send a text if changed, the first number is where the text should go, the second is where it should come from
+			client.sendMessage(‘+1234567890’,’+9876543210’,”This Page Has Changed: “+page)
         	//log the expired urls. mostly here as a debugger
-        	Logger.log(“this is expired: “+deal);
+        	Logger.log(“this is page doesn’t exist like it should: “+page);
 		} else {
 			//log the good urls. mostly here as a debugger
-			Logger.log(deal+” is good”)
+			Logger.log(page+” is good”)
 		}
 	} 
 }</p>
@@ -301,6 +311,8 @@ var client = new Twilio(sid,auth);</p>
   <div class="related-articles">
   <h4>You might also enjoy <small class="pull-right">(<a href="http://noahmanion.github.io/posts/">View all posts</a>)</small></h4>
     <ul>
+    
+      <li><a href="http://noahmanion.github.io/my-journey/" title="My Journey (Career Change)">My Journey (Career Change)</a></li>
     
       <li><a href="http://noahmanion.github.io/is-this-on/" title="Test Post">Test Post</a></li>
     

@@ -40,31 +40,17 @@ return function ouibounce(el, config) {
 
   setTimeout(attachOuiBounce, timer);
   function attachOuiBounce() {
-    if detectMob() {
-      setTimeout(function(){
-        _html.addEventListener('onload', handleLoad);
-      }, 3000);
-    } else {
-      console.log("Dektop")
     _html.addEventListener('mouseleave', handleMouseleave);
     _html.addEventListener('mouseenter', handleMouseenter);
     _html.addEventListener('keydown', handleKeydown);
-    }
   }
 
-  function detectMob () {
-    if( navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i)
-      ){
-    return true;
-  } else {
-    return false;
-    }
+  function detectmob() {
+   if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+     return true;
+   } else {
+     return false;
+   }
   }
 
   function handleMouseleave(e) {

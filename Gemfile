@@ -4,6 +4,7 @@ gem 'jekyll'
 gem 'jekyll-sitemap'
 gem 'github-pages'
 gem 'liquid'
+gem 'rouge'
 
 group :jekyll_plugins do
   gem 'octopress'
