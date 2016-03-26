@@ -137,15 +137,10 @@
 
         <div class="modal-body">
           <h2>We have a pretty cool deal for you!</h2>
-          <br>
-          <p>We're </p>
-          <br>
-          <p> 
-          <br>
           <p>Close this modal by clicking "No Thanks" below or clicking anywhere outside of the modal.</p>
 
           <form>
-            <input type="text" placeholder="you@email.com">
+            <input type="email" placeholder="you@email.com">
             <input type="submit" value="learn more &raquo;">
             <p class="form-notice">*this form doesn't work</p>
           </form>
@@ -253,31 +248,25 @@
 
 <!-- Used to fire the modal -->
     <script>
-         console.log("You're on Desktop!");
-      // if you want to use the 'fire' or 'disable' fn,
-      // you need to save OuiBounce to an object
-      document.getElementById('ouibounce-modal').style.position = "fixed";
-      var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
-        aggressive: true,
-        timer: 0,
-        callback: function() { console.log('ouibounce fired!'); }
-      });
-      $('body').on('click', function() {
-        $('#ouibounce-modal').hide();
-      });
+    //if you want to use the 'fire' or 'disable' functions
+    // you need to save ouibounce  to an object
+    var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+      aggressive: true,
+      timer: 0,
+      callback: function() { console.log('ouibounce fired!'); }
+    });
 
-      $('#ouibounce-modal .modal-footer').on('click', function() {
-        $('#ouibounce-modal').hide();
-      });
+    $('body').on('click', function(){
+      $('#ouibounce-modal').hide();
+    });
 
-      $('#ouibounce-modal .modal').on('click', function(e) {
+    $('$ouibounce-modal .modal-footer').on('click', function(){
+      $('ouibounce-modal').hide();
+    });
+
+    $('#ouibounce-modal .modal').on('click', function(e) {
         e.stopPropagation();
       });
-      function goHome() {
-        location.href = 'https://sagegreenlife.com';
-      }
-         //$('#ouibounce-modal #mc_embed_singup .button').on('click', setTimeout(goHome(), 5000));
-
     </script>
 </body>
 </html>
