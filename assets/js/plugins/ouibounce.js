@@ -1,3 +1,4 @@
+/*
 function ouibounce(el, custom_config) {
   "use strict";
 
@@ -32,9 +33,33 @@ function ouibounce(el, custom_config) {
   function attachOuiBounce() {
     if (isDisabled()) { return; }
 
+    if (isMobile()) {
+      console.log('mobile')
+      _html.addEventListener('load', onPageLoad);
+    } else {
+      console.log('desktop')
     _html.addEventListener('mouseleave', handleMouseleave);
     _html.addEventListener('mouseenter', handleMouseenter);
     _html.addEventListener('keydown', handleKeydown);
+    }
+  }
+
+  function isMobile() {
+    // returns true if mobile browser detected
+    console.log('mobile ready')
+    if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+      return true;
+      console.log('its mobile')
+    } else {
+      return false;
+      console.log('its desktop')
+    }
+  }
+  function onPageLoad() {
+    // function to fire the modal x seconds after page loads
+      console.log('3 seconds')
+    _delayTimer = setTimeout(fire, delay);
+
   }
 
   function handleMouseleave(e) {
