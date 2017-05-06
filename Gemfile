@@ -1,19 +1,11 @@
 source "https://rubygems.org"
 
-gem 'jekyll'
-gem 'jekyll-sitemap'
-gem 'github-pages'
-gem 'liquid'
-gem 'rouge'
-gem 'twilio-ruby'
-
+gem "github-pages", group: :jekyll_plugins
 
 group :jekyll_plugins do
-  gem 'octopress'
-  gem 'octopress-genesis-theme'
-  gem 'octopress-image-tag'
-  gem 'octopress-video-tag'
-  gem 'octopress-codefence'
-  gem 'jekyll-admin'
-
+  gem "jekyll-paginate"
+  gem "jekyll-sitemap"
+  gem "jekyll-gist"
+  gem "jekyll-feed"
+  gem "jemoji"
 end
