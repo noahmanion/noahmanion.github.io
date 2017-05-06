@@ -1,4 +1,4 @@
-/*
+
 function ouibounce(el, custom_config) {
   "use strict";
 

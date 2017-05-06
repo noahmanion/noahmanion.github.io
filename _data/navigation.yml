@@ -3,11 +3,8 @@
 - title: About
   url: /about/
 
-- title: Posts
+- title: Blog
   url: /posts/
 
-- title: Pages
-  url: /pages/
-
-- title: Noah Manion
-  url: http://noahmanion.github.io
+- title: Projects
+  url: /projects/

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Pages
+title: Projects
 modified: 2015-11-11T13:23:02.362000-04:00
-excerpt: "I want to see how easy it is to generate static pages. This is an example."
+excerpt: "A list of the Project's I've built."
 image:
   feature: l.jpg
   credit: Instagram
@@ -11,6 +11,5 @@ image:
 
 {% include _toc.html %}
 
-## Sorry
-There isn't a ton here. 
-
+I don't have a ton of projects, but I'm most interested in Javascript, Ruby & Rails.
+I've been working on the [railsbridge](http://railsbridge.org) curriculum to get better with Javascript. The most recent thing I built was this [Javascript To-Do App](https://noahmanion.github.io/js-todo). My plans are to build my own backend for it.
