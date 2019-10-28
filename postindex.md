@@ -1,18 +1,10 @@
 ---
 layout: page
-title: Hello!
-subtitle: Growth Marketing, Data & Product
-use-site-title: true
+title: Post Index
+subtitle: Posts About Growth Marketing, Data & Product
+use-site-title: False
 ---
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-md-10">
-      Hi! I'm Noah Manion, a Growth Marketer and Product Manager in Chicago. I write a little bit about Growth & Product. If you're interested in leadning more about me, check out my <a href="/about">About Page</a> or if you'd like to work together, feel free to check out <a href="/resume">my resume</a>.
-    </div>
-  </div>
-</div>
 
-<!--
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
@@ -78,4 +70,3 @@ use-site-title: true
   {% endif %}
 </ul>
 {% endif %}
--->

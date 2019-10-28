@@ -1,2 +1,2 @@
 # A website
-I created a dumb static html file to use as a homepage until I can find the time to get a new jekyll theme
+I created this jekyll website using the [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll) theme. 
