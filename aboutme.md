@@ -11,6 +11,9 @@ I'm Very Good At:
 - Data Analytics
 - Conversion Rate Optimization
 - Email & CRM Marketing
+- eCommerce Optimiztion
+- Mobile App Optimization
+- Referral Programs
 
 I'm Also Good At:
 - Light Development Work
