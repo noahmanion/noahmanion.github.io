@@ -11,16 +11,19 @@ description: Growth Marketing in Chicago
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-# url: "localhost:4000"
+ url: "localhost:4000"
 
 # baseurl should be an empty string
-# baseurl: ""
+ baseurl: ""
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Posts: 
+    - Posts: "blog"
+    - Tags: "tags"
   Stuff I've Done:
     - My Resume: "resume"
     - Growth Marketing Portfolio: "case"
@@ -163,6 +166,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
+paginate_path: "/blog/page:num/"
 
 kramdown:
   input: GFM
